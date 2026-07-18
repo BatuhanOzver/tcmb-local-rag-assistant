@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gas Field Support Agent</title>
+  <title>TCMB Bilgi Asistanı</title>
   <style>
     /* ── Base: high-contrast, large text for field use ── */
     *, *::before, *::after { box-sizing: border-box; }
@@ -392,7 +392,7 @@
       header h1 { font-size: 0.95rem; gap: 6px; }
       header h1 .icon { font-size: 1.2rem; }
       header h1 .title-text { display: none; }
-      header h1::after { content: "Gas Field Support"; font-size: 0.95rem; }
+      header h1::after { content: "TCMB Asistan"; font-size: 0.95rem; }
       .controls { gap: 8px; }
       .toggle-label { font-size: 0.7rem; }
       .status { font-size: 0.7rem; padding: 3px 8px; }
@@ -423,7 +423,7 @@
     }
     @media (max-width: 340px) {
       html { font-size: 15px; }
-      header h1::after { content: "Gas Support"; font-size: 0.9rem; }
+      header h1::after { content: "TCMB"; font-size: 0.9rem; }
       .quick-btn { padding: 6px 10px; font-size: 0.72rem; }
       #send-btn { min-width: 56px; padding: 10px 12px; }
     }
@@ -433,8 +433,8 @@
 
 <header>
   <h1>
-    <span class="icon">🔧</span>
-    <span class="title-text">Gas Field Support Agent</span>
+    <span class="icon">🏦</span>
+    <span class="title-text">TCMB Bilgi Asistanı</span>
   </h1>
   <div class="controls">
     <label class="toggle-label">
@@ -446,14 +446,14 @@
 </header>
 
 <div id="quick-actions">
-  <button class="quick-btn" data-q="How do I detect a gas leak?">🔍 Gas Leak Detection</button>
-  <button class="quick-btn" data-q="Low pressure downstream of regulator">⚠️ Low Pressure Fault</button>
-  <button class="quick-btn" data-q="Emergency shutdown procedure">🚨 Emergency Shutdown</button>
-  <button class="quick-btn" data-q="Pre-inspection checklist">📋 Pre-Inspection</button>
-  <button class="quick-btn" data-q="PPE requirements for gas field work">🦺 PPE Requirements</button>
-  <button class="quick-btn" data-q="No gas flow at site">🚫 No Gas Flow</button>
-  <button class="quick-btn" data-q="Pressure testing procedure">📐 Pressure Test</button>
-  <button class="quick-btn" data-q="Confined space entry procedure">⛑️ Confined Space</button>
+  <button class="quick-btn" data-q="TCMB'nin temel görevleri nelerdir?">🏛️ TCMB Görevleri</button>
+  <button class="quick-btn" data-q="Enflasyon hedeflemesi rejimi nedir?">🎯 Enflasyon Hedeflemesi</button>
+  <button class="quick-btn" data-q="PPK karar süreci nasıl işler?">📅 PPK Karar Süreci</button>
+  <button class="quick-btn" data-q="Para politikası araçları nelerdir?">🛠️ Para Politikası Araçları</button>
+  <button class="quick-btn" data-q="Faiz koridoru nedir?">📊 Faiz Koridoru</button>
+  <button class="quick-btn" data-q="2018 kur şoku sırasında neler oldu?">📉 2018 Kur Şoku</button>
+  <button class="quick-btn" data-q="2026 itibarıyla güncel politika faizi nedir?">🔢 Güncel Politika Faizi</button>
+  <button class="quick-btn" data-q="EVDS nedir ve nasıl kullanılır?">💾 EVDS</button>
 </div>
 
 <div id="chat">
@@ -468,7 +468,7 @@
   <button id="upload-btn" title="Upload document to knowledge base">📄</button>
   <textarea
     id="user-input"
-    placeholder="Describe the issue or ask a question..."
+    placeholder="TCMB hakkında bir soru sorun..."
     rows="1"
     autofocus
   ></textarea>
@@ -686,15 +686,15 @@
         // Always restore the welcome message when ready
         const welcomeMsgReady = chat.querySelector('.message.agent');
         if (welcomeMsgReady) {
-          welcomeMsgReady.innerHTML = `<strong>Gas Field Support Agent – Ready</strong><br>` +
-            `Running locally on this device. No internet connection required.<br><br>` +
-            `Ask me about:<ul>` +
-            `<li>Gas leak detection &amp; safety procedures</li>` +
-            `<li>Fault diagnosis &amp; decision trees</li>` +
-            `<li>Equipment maintenance &amp; repair steps</li>` +
-            `<li>Pressure testing &amp; valve inspection</li>` +
-            `<li>PPE requirements &amp; compliance</li></ul>` +
-            `<em style="color:var(--warning);">⚠️ Always follow your site-specific safety procedures.</em>`;
+          welcomeMsgReady.innerHTML = `<strong>TCMB Bilgi Asistanı – Hazır</strong><br>` +
+            `Bu cihazda yerel olarak çalışıyor. İnternet bağlantısı gerekmez.<br><br>` +
+            `Şunlar hakkında soru sorabilirsiniz:<ul>` +
+            `<li>TCMB'nin görevleri &amp; kurumsal yapısı</li>` +
+            `<li>Enflasyon hedeflemesi &amp; fiyat istikrarı</li>` +
+            `<li>PPK karar süreci &amp; faiz kararları</li>` +
+            `<li>Para politikası araçları (faiz koridoru, ROM, zorunlu karşılıklar)</li>` +
+            `<li>Tarihsel dönemler (2001-2026) &amp; EVDS veri sistemi</li></ul>` +
+            `<em style="color:var(--warning);">⚠️ Bu asistan bilgilendirme amaçlıdır, yatırım tavsiyesi değildir.</em>`;
           delete welcomeMsgReady.dataset.replaced;
         }
         break;
